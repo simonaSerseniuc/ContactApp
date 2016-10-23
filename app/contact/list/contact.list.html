@@ -1,0 +1,21 @@
+<div class="contacts"> 
+	<h1 class="title">Contacts
+		<a class="addBtn customBtn" ng-click="newContact()"><i class="glyphicon glyphicon-plus"></i> </a>
+	</h1>
+	
+	<div class="content">
+		<div class="search">
+			<input ng-model="searchContact" placeholder="Search">
+		</div>
+
+		<div ng-repeat="contact in contacts | filter:searchContact | orderBy:'name' " class="contactsList">
+			<a ng-click="moreDetails($index)" class="contactLine" ui-sref="contacts.details">
+				<img ng-src="{{contact.avatar}}">
+				<span class="shortDetails">
+					<span>{{contact.name | capitalize:true}}</span>
+					<span>{{contact.email}}</span>
+				</span>
+			</a>
+		</div>
+	</div>
+</div>

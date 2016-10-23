@@ -1,0 +1,30 @@
+<div class="contactDetails"> 
+	<h1 class="title">Contacts
+		<a class="addBtn customBtn" ng-click="newContact()"><i class="glyphicon glyphicon-plus"></i> </a>
+	</h1>
+	
+	<div class="content">
+		<img ng-src="{{contact.avatar}}">
+		<span class="shortDetails">
+			<input value="{{contact.name | capitalize:true}}" ng-model="contact.name">
+			<input value="{{contact.email}}" ng-model="contact.email">
+		</span>
+
+		<div class="detailsLine">
+			<span class="labelDetails">Job</span>
+			<input value="{{contact.job | capitalize:true }}" ng-model="contact.job">
+		</div>
+
+		<div class="detailsLine">
+			<span class="labelDetails">Location</span>
+			<input value="{{contact.location | capitalize:true}}" ng-model="contact.location">
+		</div>
+
+		<div class="detailsLine">
+			<span class="labelDetails">Tag</span>
+			<input value="{{contact.tag | capitalize:true}}" ng-model="contact.tag">
+		</div>
+	</div>
+
+	<a class="saveBtn customBtn" ng-click=saveContact()> Save </a>
+</div>
